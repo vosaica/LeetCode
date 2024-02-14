@@ -6,8 +6,7 @@
 
 # @lc code=start
 class Solution:
-    def isValidSudoku(self, board: list[list[str]]) -> bool:
-        return all( not any( (lambda s, view: any((c in s or s.add(c)) for c in view))(set(), view) for view in views) for views in ( [[c for c in row if c != "."] for row in board], [[row[i] for row in board if row[i] != "."] for i in range(0, 9)], [ [ board[row + i][col + j] for j in range(3) for i in range(3) if board[row + i][col + j] != "." ] for row in range(0, 9, 3) for col in range(0, 9, 3) ],))
+    isValidSudoku = lambda _, board: all(not any((lambda s, view: any((c in s or s.add(c)) for c in view))(set(), view) for view in views) for views in ([[c for c in row if c != "."] for row in board], [[row[i] for row in board if row[i] != "."] for i in range(0, 9)], [[board[row + i][col + j] for j in range(3) for i in range(3) if board[row + i][col + j] != "."] for row in range(0, 9, 3) for col in range(0, 9, 3)]))  # noqa: E731
 
 # @lc code=end
 
