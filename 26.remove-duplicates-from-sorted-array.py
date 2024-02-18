@@ -5,11 +5,8 @@
 #
 
 # @lc code=start
-from typing import List
-
-
 class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
+    def removeDuplicates(self, nums: list[int]) -> int:
         i = 0
         for j in range(1, len(nums)):
             if nums[i] != nums[j]:
@@ -17,7 +14,7 @@ class Solution:
                 nums[i] = nums[j]
         return i + 1
 
-    def removeDuplicates0(self, nums: List[int]) -> int:
+    def removeDuplicates0(self, nums: list[int]) -> int:
         largest = nums[0]
         i = 1
         for j in range(1, len(nums)):

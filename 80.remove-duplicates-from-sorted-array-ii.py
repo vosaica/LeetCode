@@ -5,11 +5,8 @@
 #
 
 # @lc code=start
-from typing import List
-
-
 class Solution:
-    def removeDuplicates(self, nums: List[int]) -> int:
+    def removeDuplicates(self, nums: list[int]) -> int:
         i = 0
         count = 1
         for j in range(1, len(nums)):
